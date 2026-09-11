@@ -1444,8 +1444,12 @@ button:active,
 }
 
 .badge-gold-inline {
-  display: inline-block;
-  white-space: nowrap;
+  display: inline;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
   vertical-align: baseline;
   background: rgba(254, 206, 8, 0.22);
   color: #785A00;
@@ -1457,8 +1461,12 @@ button:active,
 }
 
 .badge-red-inline {
-  display: inline-block;
-  white-space: nowrap;
+  display: inline;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
   vertical-align: baseline;
   background: rgba(198, 21, 27, 0.09);
   color: #C6151B;
@@ -2933,9 +2941,15 @@ button:active,
     border-radius: 0;
     box-shadow: 0 2px 20px rgba(0,0,0,0.08);
   }
-  .header-inner { padding: 10px 16px; }
-  .logo-title { font-size: 1rem; letter-spacing: 1px; }
-  .logo-sub { font-size: 0.55rem; }
+  .header-inner { padding: 10px 12px; gap: 8px; }
+  .logo-group { gap: 8px; max-width: calc(100% - 48px); }
+  .logo-text-group { min-width: 0; overflow: hidden; }
+  .logo-title { font-size: 0.85rem; letter-spacing: 0.5px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+  .logo-sub { font-size: 0.52rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+  @media (max-width: 480px) {
+    .logo-title { font-size: 0.78rem; letter-spacing: 0.2px; }
+  }
 
   /* ── Hero ── */
   .hero {
