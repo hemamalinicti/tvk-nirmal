@@ -415,6 +415,8 @@
       font-size: 0.75rem;
       font-weight: 900;
       text-transform: uppercase;
+      pointer-events: none;
+      z-index: 2;
     }
 
     .news-content {
@@ -1404,7 +1406,7 @@
             <!-- Video Card 1 -->
             <div class="news-card" data-category="development" data-reveal>
               <div class="news-image-wrapper">
-                <video src="/video1.mp4" controls preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <video src="/video1.mp4#t=0.001" controls playsinline webkit-playsinline preload="auto" poster="/insta_img_1.jpg" style="width: 100%; height: 100%; object-fit: cover;"></video>
                 <span class="news-badge">Development</span>
               </div>
               <div class="news-content">
@@ -1424,7 +1426,7 @@
             <!-- Video Card 2 -->
             <div class="news-card" data-category="development" data-reveal>
               <div class="news-image-wrapper">
-                <video src="/video2.mp4" controls preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <video src="/video2.mp4#t=0.001" controls playsinline webkit-playsinline preload="auto" poster="/insta_img_3.jpg" style="width: 100%; height: 100%; object-fit: cover;"></video>
                 <span class="news-badge">Development</span>
               </div>
               <div class="news-content">
@@ -1621,7 +1623,7 @@
         grid.innerHTML = updates.map(update => `
           <article class="instagram-update-card">
             ${update.video 
-              ? `<video src="${update.video}" controls preload="metadata" style="width: 100%; height: 210px; object-fit: cover; border-radius: 12px 12px 0 0;"></video>` 
+              ? `<video src="${update.video}#t=0.001" controls playsinline webkit-playsinline preload="auto" ${update.image ? `poster="${update.image}"` : ''} style="width: 100%; height: 210px; object-fit: cover; border-radius: 12px 12px 0 0;"></video>` 
               : `<img src="${update.image}" alt="${update.title}">`
             }
             <div class="instagram-update-body">
