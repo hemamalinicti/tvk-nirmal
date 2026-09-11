@@ -1708,12 +1708,18 @@
       function setInstagramStatus(message) {
         const status = document.getElementById('instagram-status');
         if (!status) return;
-
         if (!message) {
           status.textContent = '';
           status.classList.remove('active');
           return;
         }
+        status.textContent = message;
+        status.classList.add('active');
+      }
+
+      window.filterNews = function (category) {
+        const tabs = document.querySelectorAll('.news-tab');
+        const cards = document.querySelectorAll('.news-card');
         const container = document.getElementById('news-carousel');
 
         // Active tab styling
@@ -1751,7 +1757,7 @@
         setTimeout(() => {
           rebuildDots();
         }, 320);
-      }
+      };
 
       window.scrollNews = function (direction) {
         const container = document.getElementById('news-carousel');
@@ -1759,55 +1765,33 @@
         const visibleCard = Array.from(container.querySelectorAll('.news-card')).find(card => card.style.display !== 'none');
         const cardToUse = visibleCard || container.querySelector('.news-card');
         if (!cardToUse) return;
-        const cardWidth = cardToUse.offsetWidth + 30; // card width + gap
+        const cardWidth = cardToUse.offsetWidth + 30;
         if (direction === 1 && container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
-            container.scrollTo({ left: 0, behavior: 'smooth' });
-            return;
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+          return;
         } else if (direction === -1 && container.scrollLeft <= 10) {
-            container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
-            return;
+          container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+          return;
         }
         container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-      }
+      };
 
       window.goToSlide = function (index) {
         const container = document.getElementById('news-carousel');
         if (!container) return;
-
-        // Find the index-th visible card
         const visibleCards = Array.from(container.querySelectorAll('.news-card')).filter(card => card.style.display !== 'none');
         if (visibleCards.length === 0) return;
-
         const targetCard = visibleCards[Math.min(index, visibleCards.length - 1)];
         if (targetCard) {
           container.scrollTo({ left: targetCard.offsetLeft - 10, behavior: 'smooth' });
         }
-      }
-
-      function rebuildDots() {
-      }
-
-      window.goToSlide = function (index) {
-        const container = document.getElementById('news-carousel');
-        if (!container) return;
-
-        // Find the index-th visible card
-        const visibleCards = Array.from(container.querySelectorAll('.news-card')).filter(card => card.style.display !== 'none');
-        if (visibleCards.length === 0) return;
-
-        const targetCard = visibleCards[Math.min(index, visibleCards.length - 1)];
-        if (targetCard) {
-          container.scrollTo({ left: targetCard.offsetLeft - 10, behavior: 'smooth' });
-        }
-      }
+      };
 
       function rebuildDots() {
         const container = document.getElementById('news-carousel');
         const dotsContainer = document.getElementById('carousel-dots');
         if (!container || !dotsContainer) return;
-
         const visibleCards = Array.from(container.querySelectorAll('.news-card')).filter(card => card.style.display !== 'none');
-
         dotsContainer.innerHTML = '';
         visibleCards.forEach((_, idx) => {
           const dot = document.createElement('span');
