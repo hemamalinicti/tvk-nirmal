@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    /* Critical Anti-Flash Image Constraints */
+    img { max-width: 100%; height: auto; }
+    .logo-flag-img, .topbar-logo-img {
+      width: 36px !important;
+      height: 24px !important;
+      max-width: 36px !important;
+      max-height: 24px !important;
+      aspect-ratio: 3 / 2 !important;
+      object-fit: contain !important;
+      }
+  </style>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developments | TVK Digital</title>
+  <meta name="description" content="Infrastructure and development projects by Tamilaga Vettri Kazhagam" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Hind+Madurai:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --poster-red: #C6151B;
+      --poster-yellow: #FECE08;
+      --poster-dark-red: #8B0000;
+      --white: #FFFFFF;
+      --black: #000000;
+      --grey: #F2F2F2;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', 'Hind Madurai', sans-serif;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+    }
+
+    .tamil-text {
+      font-family: 'Hind Madurai', sans-serif;
+    }
+
+    main {
+      padding: 0;
+    }
+
+    .page-header {
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: white;
+      padding: 130px 0 48px;
+      margin-bottom: 60px;
+    }
+    .page-header::before,
+    .page-header::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .page-header::before {
+      width: 320px;
+      height: 320px;
+      background: rgba(254, 206, 8, 0.12);
+      top: -120px;
+      right: -70px;
+      filter: blur(8px);
+    }
+
+    .page-header::after {
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(255,255,255,0.15);
+      bottom: -90px;
+      left: -40px;
+    }
+
+    .page-header-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 32px;
+      align-items: end;
+    }
+
+    .page-header-copy {
+      max-width: 760px;
+    }
+
+    .page-header-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: var(--poster-yellow);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      text-wrap: balance;
+    }
+
+    .page-header p {
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.88);
+      max-width: 720px;
+    }
+
+    .page-header-emphasis {
+      color: var(--poster-yellow);
+      display: block;
+    }
+
+    .page-header-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .page-stat {
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+    }
+
+    .page-stat strong {
+      display: block;
+      font-size: 1.85rem;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: var(--poster-yellow);
+    }
+
+    .page-stat span {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.84);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .page-header-panel {
+      justify-self: end;
+      width: min(100%, 320px);
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .page-header-panel-label {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .page-header-panel h2 {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .page-header-panel p {
+      max-width: none;
+      font-size: 0.97rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .content-wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .dev-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .dev-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .dev-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .dev-card-image {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #5A0C12 0%, #7A1018 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+
+    .dev-card-content {
+      padding: 25px;
+    }
+
+    .dev-card-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--poster-red);
+      margin-bottom: 12px;
+    }
+
+    .dev-card-desc {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .dev-status {
+      display: inline-block;
+      background: var(--poster-yellow);
+      color: var(--black);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* News Section Styles */
+    .news-section {
+      padding: 100px 0;
+      background: #fafafa;
+      border-bottom: 2px solid #eee;
+    }
+
+    .news-shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: block;
+    }
+
+    .news-section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .news-section-kicker {
+      color: var(--poster-red);
+      font-weight: 900;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .news-section-title {
+      font-size: 2.5rem;
+      color: var(--black);
+      margin-top: 10px;
+    }
+
+    .section-underline {
+      width: 80px;
+      height: 5px;
+      background: var(--poster-yellow);
+      margin: 15px auto 0;
+    }
+
+    .news-carousel-wrap {
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .news-tabs-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .news-tab {
+      background: white;
+      border: 2px solid #ddd;
+      color: var(--poster-red);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .news-tab:hover {
+      border-color: var(--poster-red);
+    }
+
+    .news-tab.active {
+      background: var(--poster-red);
+      color: white;
+      border-color: var(--poster-red);
+    }
+
+    .news-carousel-viewport {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+      scroll-snap-type: x mandatory;
+    }
+
+    .news-carousel-viewport::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .news-carousel-viewport::-webkit-scrollbar-thumb {
+      background: rgba(198, 21, 27, 0.35);
+      border-radius: 999px;
+    }
+
+    .news-card {
+      flex: 0 0 calc(33.333% - 20px);
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      cursor: pointer;
+      scroll-snap-align: start;
+    }
+
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .news-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #5A0C12 0%, #7A1018 100%);
+    }
+
+    .news-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .news-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--poster-yellow);
+      color: var(--poster-red);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .news-content {
+      padding: 25px;
+    }
+
+    .news-date {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--poster-red);
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .news-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--black);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .news-text {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .news-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .news-read-more {
+      background: none;
+      border: none;
+      color: var(--poster-red);
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .news-read-more:hover {
+      gap: 12px;
+    }
+
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--poster-red);
+      color: white;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 100;
+    }
+
+    .carousel-control:hover {
+      background: var(--poster-dark-red);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-control.prev {
+      left: 0;
+    }
+
+    .carousel-control.next {
+      right: 0;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .dot.active {
+      background: var(--poster-red);
+      width: 30px;
+      border-radius: 10px;
+    }
+
+    .instagram-source-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .instagram-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .instagram-panel > div {
+      min-width: 0;
+    }
+
+    .instagram-profile-card {
+      background: linear-gradient(135deg, #111 0%, var(--poster-red) 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 16px 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.16);
+    }
+
+    .instagram-profile-card > div:first-child {
+      flex: 1;
+      max-width: 800px;
+    }
+
+    .instagram-kicker {
+      color: var(--poster-yellow);
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .instagram-profile-card h2 {
+      font-size: 1.7rem;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .instagram-profile-card p {
+      color: rgba(255,255,255,0.84);
+      line-height: 1.5;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .instagram-handle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--poster-yellow);
+      font-weight: 900;
+      font-size: 0.95rem;
+      margin-bottom: 0px;
+    }
+
+    .instagram-actions {
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .instagram-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: var(--transition);
+    }
+
+    .instagram-btn.primary {
+      background: var(--poster-yellow);
+      color: var(--black);
+    }
+
+    .instagram-btn.secondary {
+      color: white;
+    }
+
+    .instagram-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .instagram-carousel-wrap {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .instagram-feed-grid {
+      display: flex;
+      gap: 18px;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      padding: 4px 4px 16px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(198, 21, 27, 0.35) transparent;
+    }
+
+    .instagram-feed-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .instagram-feed-grid::-webkit-scrollbar-thumb {
+      background: rgba(198, 21, 27, 0.35);
+      border-radius: 999px;
+    }
+
+    .instagram-carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 999px;
+      background: var(--poster-red);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
+      transition: var(--transition);
+    }
+
+    .instagram-carousel-control:hover {
+      background: var(--poster-dark-red);
+      transform: translateY(-50%) scale(1.06);
+    }
+
+    .instagram-carousel-control.prev {
+      left: -14px;
+    }
+
+    .instagram-carousel-control.next {
+      right: -14px;
+    }
+
+    .instagram-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .instagram-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #d7d7d7;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .instagram-dot.active {
+      width: 28px;
+      background: var(--poster-red);
+    }
+
+    .instagram-status {
+      display: none;
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    .instagram-status.active {
+      display: block;
+    }
+
+    .instagram-update-card {
+      flex: 0 0 calc(33.333% - 12px);
+      min-width: calc(33.333% - 12px);
+      max-width: calc(33.333% - 12px);
+      background: #fffaf0;
+      border: 1px solid rgba(198, 21, 27, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      transition: var(--transition);
+      scroll-snap-align: start;
+    }
+
+    .instagram-update-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 38px rgba(0,0,0,0.13);
+    }
+
+    .instagram-update-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #000;
+      object-position: center;
+      display: block;
+    }
+
+    .instagram-update-body {
+      padding: 18px;
+    }
+
+    .instagram-update-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--poster-red);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .instagram-update-body h3 {
+      color: var(--black);
+      font-size: 1.05rem;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .instagram-update-body p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .instagram-update-body a {
+      color: var(--poster-red);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .instagram-note {
+      margin-top: 18px;
+      color: #777;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: var(--poster-red);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 1024px) {
+      .page-header-shell,
+      .instagram-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header-panel {
+        justify-self: stretch;
+        width: 100%;
+      }
+
+      .page-header-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .news-card {
+        flex: 0 0 calc(50% - 15px);
+      }
+    }
+
+@media (max-width: 768px) {
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  header {
+    padding: 12px 0;
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 1.1rem;
+  }
+
+  .logo-text {
+    font-size: 1.35rem;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 14px;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+
+  /* =========================
+     HERO SECTION
+  ========================= */
+
+  .page-header {
+    padding: 135px 0 50px !important;
+    margin-bottom: 30px;
+    min-height: auto !important;
+    display: block !important;
+  }
+
+  .page-header-shell {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 20px;
+    padding: 0 1.2rem;
+  }
+
+  .page-header-kicker {
+    font-size: 0.70rem;
+    padding: 8px 14px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    letter-spacing: 0.8px;
+    display: inline-block;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    line-height: 1.05;
+    margin-bottom: 14px;
+    letter-spacing: -0.03em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .page-header-emphasis {
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1.15;
+    margin-top: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .page-header p {
+    font-size: 0.96rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.92);
+    max-width: 100%;
+  }
+
+  .page-header-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+  }
+
+  .page-header-panel {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 20px !important;
+    padding: 20px 18px !important;
+    border-radius: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* =========================
+     DEVELOPMENTS GRID
+  ========================= */
+
+  .dev-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .dev-card {
+    border-radius: 20px;
+  }
+
+  .dev-card-image {
+    height: 210px;
+  }
+
+  .dev-card-content {
+    padding: 22px;
+  }
+
+  .dev-card-title {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+
+  .dev-card-desc {
+    font-size: 0.96rem;
+    line-height: 1.8;
+  }
+
+  /* =========================
+     NEWS SECTION
+  ========================= */
+
+  .news-section-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .news-carousel-viewport {
+    gap: 18px;
+    padding-bottom: 10px;
+  }
+
+  .news-card {
+    flex: 0 0 88%;
+    min-width: 88%;
+    border-radius: 20px;
+  }
+
+  .news-content {
+    padding: 22px;
+  }
+
+  .news-title {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  .news-text {
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
+  .carousel-control {
+    display: none;
+  }
+
+  /* =========================
+     INSTAGRAM SECTION
+  ========================= */
+
+  .instagram-panel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 1.2rem;
+  }
+
+  .instagram-profile-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 20px 18px !important;
+    border-radius: 16px !important;
+    gap: 12px !important;
+  }
+
+  .instagram-profile-card > div:first-child {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .instagram-kicker {
+    font-size: 0.68rem !important;
+    margin-bottom: 4px !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .instagram-profile-card h2 {
+    font-size: 1.45rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .instagram-profile-card p {
+    font-size: 0.86rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+    color: rgba(255,255,255,0.85) !important;
+  }
+
+  .instagram-handle {
+    font-size: 0.88rem !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+  }
+
+  .instagram-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    margin-top: 4px !important;
+  }
+
+  .instagram-btn {
+    flex: 1 !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 0 12px !important;
+    font-size: 0.82rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: 10px !important;
+  }
+
+  .instagram-feed-grid {
+    gap: 14px;
+  }
+
+  .instagram-update-card {
+    flex-basis: 88%;
+    min-width: 88%;
+    max-width: 88%;
+    border-radius: 18px;
+  }
+
+  .instagram-update-card img {
+    height: 220px;
+  }
+
+  .instagram-update-body {
+    padding: 20px;
+  }
+
+  .instagram-update-body h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  .instagram-update-body p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .instagram-carousel-control {
+    display: none;
+  }
+
+}
+  @media (max-width: 480px) {
+
+  .container,
+  .content-wrapper,
+  .page-header-shell,
+  .instagram-panel,
+  .news-shell {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  .page-header {
+    padding: 130px 0 40px !important;
+  }
+
+  .page-header h1 {
+    font-size: 2.1rem !important;
+    line-height: 1.08 !important;
+  }
+
+  .page-header-emphasis {
+    font-size: 1.55rem !important;
+    line-height: 1.18 !important;
+  }
+
+  .page-header p {
+    font-size: 0.92rem !important;
+    line-height: 1.75 !important;
+  }
+
+  .page-header-kicker {
+    font-size: 0.66rem !important;
+    padding: 7px 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .news-section-title {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .dev-card-content,
+  .news-content,
+  .instagram-update-body {
+    padding: 16px !important;
+  }
+
+  .instagram-profile-card {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .news-card,
+  .instagram-update-card {
+    flex-basis: 92%;
+    min-width: 92%;
+    max-width: 92%;
+  }
+
+}
+  
+    /* Alternating styles for news-card */
+    .news-card:nth-child(odd) {
+      background: #8b0f13 !important; /* Dimmed Red */
+      border-color: #630a0d !important;
+    }
+    .news-card:nth-child(odd) .news-title,
+    .news-card:nth-child(odd) .news-text,
+    .news-card:nth-child(odd) .news-date,
+    .news-card:nth-child(odd) .news-read-more {
+      color: #ffd84d !important; /* Slightly brighter golden for contrast against dim red */
+    }
+    .news-card:nth-child(odd) .news-date svg {
+      color: #ffd84d !important;
+    }
+
+    .news-card:nth-child(even) {
+      background: #c6a617 !important; /* Dimmed Golden */
+      border-color: #a3870e !important;
+    }
+    .news-card:nth-child(even) .news-title,
+    .news-card:nth-child(even) .news-text,
+    .news-card:nth-child(even) .news-date,
+    .news-card:nth-child(even) .news-read-more {
+      color: #730a0e !important; /* Darker red for contrast against dim golden */
+    }
+    .news-card:nth-child(even) .news-date svg {
+      color: #730a0e !important;
+    }
+
+
+    /* Animation for page stats */
+    .page-stat {
+      transform-origin: center;
+      animation: shrinkPopup 4.5s infinite ease-in-out;
+    }
+    .page-stat:nth-child(1) { animation-delay: 0s; }
+    .page-stat:nth-child(2) { animation-delay: 1.5s; }
+    .page-stat:nth-child(3) { animation-delay: 3.0s; }
+
+    @keyframes shrinkPopup {
+      0% { transform: scale(1); }
+      8% { transform: scale(0.92); }
+      16% { transform: scale(1.03); }
+      24% { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+
+
+    /* Full height hero for desktop */
+    @media (min-width: 1025px) {
+      .page-header {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 120px 0 60px !important;
+      }
+      .page-header-shell {
+        width: 100%;
+        align-items: center !important;
+      }
+    }
+
+</style>
+</head>
+<body>
+  <!-- ======== HEADER ======== -->
+  <header id="main-header">
+    <div class="header-inner">
+      <div class="logo-group">
+        <img src="/tvkflag.png" alt="TVK Flag" class="logo-flag-img" width="36" height="24" style="width:36px;height:24px;aspect-ratio:3/2;object-fit:contain;" decoding="async" fetchpriority="high">
+        <div class="logo-text-group">
+          <span class="logo-title">TVK THIRUPARANKUNDRAM</span>
+          <span class="logo-sub">தமிழக வெற்றி கழகம்</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/developments.html" class="nav-link active">Developments</a>
+        <a href="/services.html" class="nav-link">Services</a>
+        <a href="/ideology.html" class="nav-link">Ideology</a>
+        <a href="/admin.html" class="nav-link nav-admin">Admin</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="/" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="/developments.html" class="mob-link active">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        Developments
+      </a>
+      <a href="/services.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Services
+      </a>
+      <a href="/ideology.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>
+        Ideology
+      </a>
+      <a href="/admin.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Admin
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="page-header-shell">
+        <div class="page-header-copy">
+          <span class="page-header-kicker">நிலப்பணி கண்காணிப்பு | Ground Action Dashboard</span>
+          <h1>
+            Developments
+            <span class="page-header-emphasis tamil-text">மனுவிலிருந்து முன்னேற்றம் வரை</span>
+          </h1>
+          <p>
+            ஆய்வுகள், public grievance follow-up, welfare outreach, மற்றும் மக்கள் வாழ்க்கையில் நேரடியாக தெரியும்
+            infrastructure progress ஆகிய தொகுதி பணிகளை ஒரே இடத்தில் தெளிவாக பின்தொடர இந்தப் பகுதி உதவுகிறது.
+          </p>
+          <div class="page-header-stats">
+            <div class="page-stat">
+              <strong>Field</strong>
+              <span>Inspections and site visits</span>
+            </div>
+            <div class="page-stat">
+              <strong>Public</strong>
+              <span>Petitions, review meetings, and action requests</span>
+            </div>
+            <div class="page-stat">
+              <strong>Live</strong>
+              <span>Instagram-linked updates from local activity</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="page-header-panel">
+          <span class="page-header-panel-label">இந்தப் பகுதி | This Page Covers</span>
+          <h2 class="tamil-text">கண்ணுக்குப் புலப்படும் பணிகள், வேகமான updates, தெளிவான accountability.</h2>
+          <p>
+            தொகுதியில் எழுப்பப்படும் கோரிக்கைகள், நடக்கும் ஆய்வுகள், பரிசீலனையில் உள்ள விவகாரங்கள், முன்னேற்றம் காணும்
+            பணிகள் ஆகியவற்றை ஒரே இடத்தில் தொடர்ச்சியாக பின்தொடரலாம்.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- Instagram Development Source -->
+    <section class="instagram-source-section" id="instagram-updates">
+      <div class="instagram-panel">
+        <aside class="instagram-profile-card">
+          <div>
+            <span class="instagram-kicker">Instagram Development Feed</span>
+            <h2>Updates from the ground</h2>
+            <p>
+              Development highlights and constituency activity are linked to the public Instagram source shared for
+              TVK C.T.R. Nirmal Kumar updates.
+            </p>
+            <div class="instagram-handle">◎ <a href="https://www.instagram.com/ctr.nirmalkumar?igsh=NmpteXV3M24xcjd2" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">@nirmaltvk</a></div>
+          </div>
+
+          <div class="instagram-actions">
+            <a class="instagram-btn primary" href="https://www.instagram.com/ctr.nirmalkumar?igsh=NmpteXV3M24xcjd2" target="_blank"
+              rel="noopener">insta id</a>
+            <a class="instagram-btn secondary" href="#news">View Media Center</a>
+          </div>
+        </aside>
+
+        <div>
+          <div class="instagram-status" id="instagram-status"></div>
+          <div class="instagram-carousel-wrap">
+            <button class="instagram-carousel-control prev" type="button" onclick="scrollInstagramUpdates(-1)" aria-label="Previous Instagram update">
+              &#9664;
+            </button>
+            <button class="instagram-carousel-control next" type="button" onclick="scrollInstagramUpdates(1)" aria-label="Next Instagram update">
+              &#9654;
+            </button>
+            <div class="instagram-feed-grid" id="instagram-development-grid" data-profile-url="https://www.instagram.com/ctr.nirmalkumar?igsh=NmpteXV3M24xcjd2">
+              <!-- Instagram-linked development cards load here -->
+            </div>
+          </div>
+          <div class="instagram-carousel-dots" id="instagram-carousel-dots" aria-label="Instagram updates navigation">
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Live News & Media Center Section -->
+    <section id="news" class="news-section">
+      <div class="news-shell">
+
+        <!-- Header -->
+        <div class="news-section-header">
+          <span class="tamil-text news-section-kicker">
+            செய்திகள் & ஊடக மையம் | MEDIA CENTER
+          </span>
+          <h2 class="tamil-text news-section-title">
+            தகவல் மையம் & செய்திகள்
+          </h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="news-tabs-container" data-reveal>
+          <button class="news-tab active" data-category="all" onclick="filterNews('all')">
+            All Updates
+          </button>
+          <button class="news-tab" data-category="development" onclick="filterNews('development')">
+            Development
+          </button>
+          <button class="news-tab" data-category="empowerment" onclick="filterNews('empowerment')">
+            Empowerment
+          </button>
+        </div>
+
+        <!-- Swipeable Carousel Viewport Wrapper -->
+        <div class="news-carousel-wrap">
+
+          <!-- Prev Button -->
+          <button class="carousel-control prev" onclick="scrollNews(-1)">
+            ◀
+          </button>
+
+          <!-- Next Button -->
+          <button class="carousel-control next" onclick="scrollNews(1)">
+            ▶
+          </button>
+
+          <!-- Swipeable Viewport -->
+          <div class="news-carousel-viewport" id="news-carousel">
+
+            <!-- Video Card 1 -->
+            <div class="news-card" data-category="development" data-reveal>
+              <div class="news-image-wrapper">
+                <video src="/video1.mp4" controls preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <span class="news-badge">Development</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg> June 15, 2026
+                </div>
+                <h3 class="news-title tamil-text">திருப்பரங்குன்றம் அடிப்படை வசதிகள் தீர்வு!</h3>
+                <p class="news-text">
+                  மதுரை மாவட்டம், திருப்பரங்குன்றம் பகுதியில் 15 ஆண்டுகளாக அடிப்படை வசதிகள் இன்றி வாழ்ந்து வந்த பொதுமக்களின் கோரிக்கையை நேரில் சென்று கேட்டறிந்து, அவர்களுடன் இணைந்து பிரச்சினைகளுக்கு தீர்வு காணும் பணியில் திரு. C.T.R. நிர்மல் குமார் அவர்கள் கலந்து கொண்டார்.
+மக்களின் குறைகளை நேரில் அறிந்து, அதற்கான தீர்வுகளை விரைந்து செயல்படுத்த தொடர்ந்து உறுதுணையாக இருப்போம்.
+மக்கள் சேவையே எங்கள் முதன்மை நோக்கம்.
+                </p>
+                
+              </div>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="news-card" data-category="development" data-reveal>
+              <div class="news-image-wrapper">
+                <video src="/video2.mp4" controls preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <span class="news-badge">Development</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg> June 18, 2026
+                </div>
+                <h3 class="news-title tamil-text">அமைச்சர் திரு. C.T.R. நிர்மல் குமார் அவர்களின் மக்கள் சேவை!</h3>
+                <p class="news-text">
+                  மாண்புமிகு MLA மற்றும் அமைச்சர் திரு. C.T.R. நிர்மல் குமார் அவர்கள், பொதுமக்களின் குறைகளை நேரில் கேட்டறிந்து, அடிப்படை வசதிகள், குழந்தைகளின் நலன் மற்றும் அவசரகால தேவைகளில் உடனுக்குடன் உதவி செய்து, மக்கள் சேவையை தொடர்ந்து முன்னெடுத்து வருகிறார்.
+மக்களின் நம்பிக்கையை காப்பதற்கும், அவர்களின் வாழ்க்கையில் நல்ல மாற்றத்தை ஏற்படுத்துவதற்கும் அர்ப்பணிப்புடன் செயல்படும் இந்த பயணம் தொடரும்.
+                </p>
+                
+              </div>
+            </div>
+
+            <!-- New Added Images Card 1 -->
+            <div class="news-card" data-category="development" data-reveal>
+              <div class="news-image-wrapper">
+                <img src="/insta_img_1.jpg" alt="Party Office Inauguration">
+                <span class="news-badge">Development</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> June 21, 2026
+                </div>
+                <h3 class="news-title tamil-text">Party Office Inauguration</h3>
+                <p class="news-text">
+                  Hon. Minister C.T.R. Nirmal Kumar inaugurated the new party office in Thiruparankundram. This state-of-the-art facility will serve as the central hub for our party's welfare activities and direct citizen engagement. It is equipped with dedicated desks for grievance redressal and community support programs. Volunteers and party cadres from all over the constituency gathered to celebrate this milestone, marking a new era of transparent and accessible political leadership under the guidance of our party president.
+                </p>
+                
+              </div>
+            </div>
+
+            <!-- New Added Images Card 2 -->
+            <div class="news-card" data-category="development" data-reveal>
+              <div class="news-image-wrapper">
+                <img src="/insta_img_3.jpg" alt="Digital IT Cell Infrastructure">
+                <span class="news-badge">Development</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> June 21, 2026
+                </div>
+                <h3 class="news-title tamil-text">Digital IT Cell Setup</h3>
+                <p class="news-text">
+                  The newly inaugurated office is equipped with a modern IT cell and traditional setups. This dedicated IT cell aims to bridge the gap between citizens and administration through technology. It features real-time tracking of public grievances, social media monitoring, and rapid response coordination teams. This initiative guarantees that the voices of the people reach the leadership without delay, ensuring swift action. By integrating traditional grassroots methods with modern digital tools, we are setting a new standard in responsive governance and political accountability.
+                </p>
+                
+              </div>
+            </div>
+
+            <!-- New Added Images Card 3 -->
+            <div class="news-card" data-category="development" data-reveal>
+              <div class="news-image-wrapper">
+                <img src="/insta_img_7.jpg" alt="Kuthu Vilakku Lighting">
+                <span class="news-badge">Development</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> June 21, 2026
+                </div>
+                <h3 class="news-title tamil-text">Traditional Lamp Lighting</h3>
+                <p class="news-text">
+                  Starting the new chapter with divine blessings. The inauguration was marked by a serene Kuthu Vilakku lighting ceremony, honoring our cultural roots and invoking divine blessings for our future endeavors. Prominent party members, local leaders, and enthusiastic supporters took part in the ritual, symbolizing the dispelling of darkness and the triumph of truth. Following the ceremony, a community feast was organized, reinforcing our commitment to serving all sections of society with humility, dedication, and grace.
+                </p>
+                
+              </div>
+            </div>
+
+            <!-- Card 1 -->
+            <div class="news-card" data-category="development" data-reveal>
+              <div class="news-image-wrapper">
+                <img src="/tvk_news_1.png" alt="TVK Madurai Digital IT Cell">
+                <span class="news-badge">Development</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 18, 2026
+                </div>
+                <h3 class="news-title tamil-text">மதுரை டிஜிட்டல் சேவை மையம் திறப்பு விழா!</h3>
+                <p class="news-text">
+                  TVK Digital IT Cell in Madurai inaugurated. Citizens now connected directly with representatives for immediate grievance submissions and tracking.
+                </p>
+                
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="news-card" data-category="empowerment" data-reveal>
+              <div class="news-image-wrapper">
+                <img src="/tvk_news_2.png" alt="TVK Madurai Youth Summit">
+                <span class="news-badge">Empowerment</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 15, 2026
+                </div>
+                <h3 class="news-title tamil-text">இளையோர் திறன் மேம்பாட்டு மாநாடு!</h3>
+                <p class="news-text">
+                  TVK successfully organized Youth Empowerment Summit connecting 500+ students with technical mentorship programs.
+                </p>
+                
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="news-card" data-category="development" data-reveal>
+              <div class="news-image-wrapper">
+                <img src="/tvk_news_3.png" alt="Madurai Road Projects">
+                <span class="news-badge">Development</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 12, 2026
+                </div>
+                <h3 class="news-title tamil-text">மதுரை சாலை கட்டமைப்பு திட்டங்கள்!</h3>
+                <p class="news-text">
+                  Infrastructure Master Plan 2026 released. Road widening, solar street lighting, and rural block connectivity approved.
+                </p>
+                
+              </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+
+
+    <script>
+      const instagramSource = {
+        handle: '@nirmaltvk',
+        profileUrl: 'https://www.instagram.com/ctr.nirmalkumar?igsh=NmpteXV3M24xcjd2',
+        updates: [
+          {
+            title: 'திருப்பரங்குன்றம் அடிப்படை வசதிகள் தீர்வு!',
+            category: 'DEVELOPMENT',
+            date: 'June 15, 2026',
+            video: '/video1.mp4',
+            image: '/insta_img_1.jpg',
+            text: 'மதுரை மாவட்டம், திருப்பரங்குன்றம் பகுதியில் 15 ஆண்டுகளாக அடிப்படை வசதிகள் இன்றி வாழ்ந்து வந்த பொதுமக்களின் கோரிக்கையை நேரில் சென்று கேட்டறிந்து, அவர்களுடன் இணைந்து பிரச்சினைகளுக்கு தீர்வு காணும் பணியில் திரு. C.T.R. நிர்மல் குமார் அவர்கள் கலந்து கொண்டார்.'
+          },
+          {
+            title: 'அமைச்சர் திரு. C.T.R. நிர்மல் குமார் அவர்களின் மக்கள் சேவை!',
+            category: 'DEVELOPMENT',
+            date: 'June 18, 2026',
+            video: '/video2.mp4',
+            image: '/insta_img_3.jpg',
+            text: 'மாண்புமிகு MLA மற்றும் அமைச்சர் திரு. C.T.R. நிர்மல் குமார் அவர்கள், பொதுமக்களின் குறைகளை நேரில் கேட்டறிந்து, அடிப்படை வசதிகள், குழந்தைகளின் நலன் மற்றும் அவசரகால தேவைகளில் உடனுக்குடன் உதவி செய்து, மக்கள் சேவையை தொடர்ந்து முன்னெடுத்து வருகிறார்.'
+          },
+          {
+            title: 'Party Office Inauguration',
+            category: 'DEVELOPMENT',
+            date: 'June 21, 2026',
+            image: '/insta_img_1.jpg',
+            text: 'Hon. Minister C.T.R. Nirmal Kumar inaugurated the new party office in Thiruparankundram. This state-of-the-art facility will serve as the central hub for our party\'s welfare activities and direct citizen engagement.'
+          },
+          {
+            title: 'Digital IT Cell Setup',
+            category: 'DEVELOPMENT',
+            date: 'June 21, 2026',
+            image: '/insta_img_3.jpg',
+            text: 'The newly inaugurated office is equipped with a modern IT cell and traditional setups. This dedicated IT cell aims to bridge the gap between citizens and administration through technology.'
+          },
+          {
+            title: 'Traditional Lamp Lighting',
+            category: 'DEVELOPMENT',
+            date: 'June 21, 2026',
+            image: '/insta_img_7.jpg',
+            text: 'Starting the new chapter with divine blessings. The inauguration was marked by a serene Kuthu Vilakku lighting ceremony, honoring our cultural roots and invoking divine blessings for our future endeavors.'
+          }
+        ]
+      };
+
+      function formatInstagramDate(timestamp) {
+        if (!timestamp) return 'Instagram';
+
+        return new Date(timestamp).toLocaleDateString('en-IN', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+        });
+      }
+
+      function trimCaption(caption) {
+        if (!caption) return 'Instagram update from TVK Gopison.';
+        return caption.length > 150 ? `${caption.slice(0, 150).trim()}...` : caption;
+      }
+
+      function renderInstagramDevelopmentCards(updates = instagramSource.updates) {
+        const grid = document.getElementById('instagram-development-grid');
+        if (!grid) return;
+
+        grid.innerHTML = updates.map(update => `
+          <article class="instagram-update-card">
+            ${update.video 
+              ? `<video src="${update.video}" controls preload="metadata" style="width: 100%; height: 210px; object-fit: cover; border-radius: 12px 12px 0 0;"></video>` 
+              : `<img src="${update.image}" alt="${update.title}">`
+            }
+            <div class="instagram-update-body">
+              <div class="instagram-update-meta">
+                <span>${update.category}</span>
+                <span>${update.date}</span>
+              </div>
+              <h3 class="tamil-text">${update.title}</h3>
+              <p class="tamil-text">${update.text}</p>
+              <a href="${update.url || instagramSource.profileUrl}" target="_blank" rel="noopener">View ${instagramSource.handle}</a>
+            </div>
+          </article>
+        `).join('');
+
+        rebuildInstagramDots();
+        updateInstagramActiveDot();
+      }
+
+      window.scrollInstagramUpdates = function (direction) {
+        const container = document.getElementById('instagram-development-grid');
+        if (!container) return;
+
+        const firstCard = container.querySelector('.instagram-update-card');
+        if (!firstCard) return;
+
+        const cardWidth = firstCard.offsetWidth + 18;
+        if (direction === 1 && container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+            return;
+        } else if (direction === -1 && container.scrollLeft <= 10) {
+            container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+            return;
+        }
+        container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+      }
+
+      window.goToInstagramSlide = function (index) {
+        const container = document.getElementById('instagram-development-grid');
+        if (!container) return;
+
+        const cards = Array.from(container.querySelectorAll('.instagram-update-card'));
+        const targetCard = cards[index];
+        if (!targetCard) return;
+
+        container.scrollTo({ left: targetCard.offsetLeft - 4, behavior: 'smooth' });
+      }
+
+      function rebuildInstagramDots() {
+        const container = document.getElementById('instagram-development-grid');
+        const dotsContainer = document.getElementById('instagram-carousel-dots');
+        if (!container || !dotsContainer) return;
+
+        const cards = Array.from(container.querySelectorAll('.instagram-update-card'));
+        dotsContainer.innerHTML = cards.map((_, index) => `
+          <button class="instagram-dot ${index === 0 ? 'active' : ''}" type="button" onclick="goToInstagramSlide(${index})" aria-label="Go to Instagram update ${index + 1}"></button>
+        `).join('');
+      }
+
+      function updateInstagramActiveDot() {
+        const container = document.getElementById('instagram-development-grid');
+        if (!container) return;
+
+        const cards = Array.from(container.querySelectorAll('.instagram-update-card'));
+        const dots = Array.from(document.querySelectorAll('#instagram-carousel-dots .instagram-dot'));
+        if (!cards.length || !dots.length) return;
+
+        const scrollLeft = container.scrollLeft;
+        let activeIndex = 0;
+        let minDiff = Infinity;
+
+        cards.forEach((card, index) => {
+          const diff = Math.abs(card.offsetLeft - 4 - scrollLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            activeIndex = index;
+          }
+        });
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === activeIndex);
+        });
+      }
+
+      function setInstagramStatus(message) {
+        const status = document.getElementById('instagram-status');
+        if (!status) return;
+
+        if (!message) {
+          status.textContent = '';
+          status.classList.remove('active');
+          return;
+        }
+        const container = document.getElementById('news-carousel');
+
+        // Active tab styling
+        tabs.forEach(tab => {
+          if (tab.getAttribute('data-category') === category) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        });
+
+        // Filter cards
+        cards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0) scale(1)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(15px) scale(0.96)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+
+        // Reset scroll position to 0 on filter change
+        if (container) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+
+        // Dynamic dots recalculation based on visibility
+        setTimeout(() => {
+          rebuildDots();
+        }, 320);
+      }
+
+      window.scrollNews = function (direction) {
+        const container = document.getElementById('news-carousel');
+        if (!container) return;
+        const visibleCard = Array.from(container.querySelectorAll('.news-card')).find(card => card.style.display !== 'none');
+        const cardToUse = visibleCard || container.querySelector('.news-card');
+        if (!cardToUse) return;
+        const cardWidth = cardToUse.offsetWidth + 30; // card width + gap
+        if (direction === 1 && container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+            return;
+        } else if (direction === -1 && container.scrollLeft <= 10) {
+            container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+            return;
+        }
+        container.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+      }
+
+      window.goToSlide = function (index) {
+        const container = document.getElementById('news-carousel');
+        if (!container) return;
+
+        // Find the index-th visible card
+        const visibleCards = Array.from(container.querySelectorAll('.news-card')).filter(card => card.style.display !== 'none');
+        if (visibleCards.length === 0) return;
+
+        const targetCard = visibleCards[Math.min(index, visibleCards.length - 1)];
+        if (targetCard) {
+          container.scrollTo({ left: targetCard.offsetLeft - 10, behavior: 'smooth' });
+        }
+      }
+
+      function rebuildDots() {
+      }
+
+      window.goToSlide = function (index) {
+        const container = document.getElementById('news-carousel');
+        if (!container) return;
+
+        // Find the index-th visible card
+        const visibleCards = Array.from(container.querySelectorAll('.news-card')).filter(card => card.style.display !== 'none');
+        if (visibleCards.length === 0) return;
+
+        const targetCard = visibleCards[Math.min(index, visibleCards.length - 1)];
+        if (targetCard) {
+          container.scrollTo({ left: targetCard.offsetLeft - 10, behavior: 'smooth' });
+        }
+      }
+
+      function rebuildDots() {
+        const container = document.getElementById('news-carousel');
+        const dotsContainer = document.getElementById('carousel-dots');
+        if (!container || !dotsContainer) return;
+
+        const visibleCards = Array.from(container.querySelectorAll('.news-card')).filter(card => card.style.display !== 'none');
+
+        dotsContainer.innerHTML = '';
+        visibleCards.forEach((_, idx) => {
+          const dot = document.createElement('span');
+          dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+          dot.setAttribute('onclick', `goToSlide(${idx})`);
+          dotsContainer.appendChild(dot);
+        });
+      }
+
+      function initDevelopmentsPage() {
+        renderInstagramDevelopmentCards();
+        loadInstagramMedia();
+        rebuildDots();
+
+        const instagramContainer = document.getElementById('instagram-development-grid');
+        if (instagramContainer) {
+          instagramContainer.addEventListener('scroll', updateInstagramActiveDot);
+          window.addEventListener('resize', updateInstagramActiveDot);
+        }
+
+        const container = document.getElementById('news-carousel');
+        if (container) {
+          container.addEventListener('scroll', () => {
+            const visibleCards = Array.from(container.querySelectorAll('.news-card')).filter(card => card.style.display !== 'none');
+            if (visibleCards.length === 0) return;
+
+            const scrollLeft = container.scrollLeft;
+            let activeIdx = 0;
+            let minDiff = Infinity;
+
+            visibleCards.forEach((card, idx) => {
+              const diff = Math.abs(card.offsetLeft - 10 - scrollLeft);
+              if (diff < minDiff) {
+                minDiff = diff;
+                activeIdx = idx;
+              }
+            });
+
+            const dots = document.querySelectorAll('.carousel-dots .dot');
+            dots.forEach((dot, idx) => {
+              if (idx === activeIdx) {
+                dot.classList.add('active');
+              } else {
+                dot.classList.remove('active');
+              }
+            });
+          });
+        }
+      }
+
+      window.initDevelopmentsPage = initDevelopmentsPage;
+      initDevelopmentsPage();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDevelopmentsPage);
+      }
+    </script>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tamilaga Vettri Kazhagam. All rights reserved.</p>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+
+  <script src="/animated-bg.js" defer></script>
+<script>
+      // Auto-slide functionality
+      setInterval(() => {
+        if (window.scrollInstagramUpdates) {
+          window.scrollInstagramUpdates(1);
+        }
+        if (window.scrollNews) {
+          window.scrollNews(1);
+        }
+      }, 2000);
+</script>
+</body>
+</html>

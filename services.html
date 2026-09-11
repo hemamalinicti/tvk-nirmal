@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    /* Critical Anti-Flash Image Constraints */
+    img { max-width: 100%; height: auto; }
+    .logo-flag-img, .topbar-logo-img {
+      width: 36px !important;
+      height: 24px !important;
+      max-width: 36px !important;
+      max-height: 24px !important;
+      aspect-ratio: 3 / 2 !important;
+      object-fit: contain !important;
+      display: inline-block !important;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | TVK Digital</title>
+  <meta name="description" content="Services and benefits offered by Tamilaga Vettri Kazhagam" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Hind+Madurai:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --poster-red: #c6151b;
+      --poster-yellow: #fece08;
+      --poster-dark-red: #8b0000;
+      --white: #ffffff;
+      --black: #000000;
+      --grey: #f2f2f2;
+      --text-soft: #5f5f5f;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', 'Hind Madurai', sans-serif;
+      color: #1a1a1a;
+    }
+
+    .tamil-text {
+      font-family: 'Hind Madurai', sans-serif;
+    }
+
+    /* Header styles deleted to use global style.css */
+
+    main {
+      padding: 0;
+    }
+
+    .page-header {
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0 0 !important;
+      margin-bottom: 56px;
+    }
+
+    .page-header::before,
+    .page-header::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .page-header::before {
+      width: 320px;
+      height: 320px;
+      top: -120px;
+      right: -70px;
+      background: rgba(254, 206, 8, 0.12);
+      filter: blur(8px);
+    }
+
+    .page-header::after {
+      width: 220px;
+      height: 220px;
+      left: -40px;
+      bottom: -90px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .page-header-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(290px, 0.85fr);
+      gap: 32px;
+      width: 100%;
+      align-items: center !important;
+    }
+
+    .page-header-copy {
+      max-width: 760px;
+    }
+
+    .page-header-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--poster-yellow);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      text-wrap: balance;
+    }
+
+    .page-header-emphasis {
+      display: block;
+      color: var(--poster-yellow);
+    }
+
+    .page-header p {
+      font-size: 1.08rem;
+      line-height: 1.78;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 700px;
+    }
+
+    .page-header-mobile-note {
+      display: none;
+      margin-top: 18px;
+      font-size: 1.02rem;
+      line-height: 1.72;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .page-header-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .page-stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+    }
+
+    .page-stat strong {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .page-stat span {
+      display: block;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .page-header-panel {
+      justify-self: end;
+      width: min(100%, 330px);
+      padding: 26px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .page-header-panel-label {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .page-header-panel h2 {
+      font-size: 1.55rem;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .page-header-panel p {
+      max-width: none;
+      margin: 0;
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    .content-wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .services-overview {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .overview-card,
+    .overview-highlight {
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+    }
+
+    .overview-card {
+      background: linear-gradient(180deg, #fff9ec 0%, #ffffff 100%);
+      border: 1px solid rgba(198, 21, 27, 0.1);
+      padding: 30px;
+    }
+
+    .overview-card h2,
+    .section-heading h2 {
+      color: var(--poster-red);
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .overview-card p,
+    .section-heading p {
+      color: var(--text-soft);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .overview-list {
+      list-style: none;
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .overview-list li {
+      position: relative;
+      padding-left: 26px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .overview-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--poster-yellow), var(--poster-red));
+      box-shadow: 0 0 0 4px rgba(254, 206, 8, 0.18);
+    }
+
+    .overview-highlight {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #161616 0%, #390506 54%, var(--poster-red) 100%);
+      color: white;
+      padding: 30px;
+    }
+
+    .overview-highlight::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -40px;
+      top: -60px;
+      border-radius: 999px;
+      background: rgba(254, 206, 8, 0.16);
+      filter: blur(10px);
+    }
+
+    .overview-highlight > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .overview-highlight span {
+      display: inline-block;
+      color: var(--poster-yellow);
+      font-weight: 900;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .overview-highlight h3 {
+      font-size: 1.9rem;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .overview-highlight p {
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .overview-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .overview-metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .overview-metric strong {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .overview-metric span {
+      display: block;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.82rem;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .services-grid-header {
+      margin-top: 60px;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .service-heading-title {
+      font-size: 2.5rem;
+      color: var(--poster-red);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .heading-divider {
+      width: 80px;
+      height: 5px;
+      background: var(--poster-yellow);
+      margin: 0 auto 20px;
+      border-radius: 4px;
+    }
+
+    .service-intro-text {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .service-card {
+      background: linear-gradient(180deg, #fffdf8 0%, #ffffff 100%);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      border: 1px solid rgba(198, 21, 27, 0.1);
+      border-top: 5px solid var(--poster-red);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(254, 206, 8, 0.28), rgba(198, 21, 27, 0.12));
+      margin-bottom: 18px;
+    }
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(198, 21, 27, 0.08);
+      color: var(--poster-red);
+      font-size: 0.74rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--poster-red);
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .service-features {
+      list-style: none;
+      margin: 15px 0;
+    }
+
+    .service-features li {
+      position: relative;
+      color: #555;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      padding: 6px 0 6px 25px;
+    }
+
+    .service-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--poster-yellow);
+      font-weight: 900;
+    }
+
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      color: var(--poster-red);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .thematic-section {
+      padding: 88px 0;
+    }
+
+    .values-section {
+      background: linear-gradient(180deg, #fafafa 0%, #f3f0ea 100%);
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      margin-top: 32px;
+    }
+
+  
+
+    .value-card {
+      background: white;
+      padding: 32px;
+      border-radius: 22px;
+      border-bottom: 5px solid var(--poster-red);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .value-card.alt {
+      border-bottom-color: var(--poster-yellow);
+    }
+
+    .value-icon {
+      margin-bottom: 14px;
+    }
+    .value-icon > img {
+      width: 76px;
+      height: 76px;
+      object-fit: cover;
+      border-radius: 50% !important;
+      border: 3px solid var(--poster-yellow);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .value-card h3 {
+      color: var(--poster-red);
+      font-size: 1.18rem;
+      margin-bottom: 14px;
+    }
+
+    .value-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .promise-section {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 0;
+      background: linear-gradient(135deg, var(--poster-red) 0%, var(--poster-dark-red) 100%);
+      margin-top: 32px;
+      color: white;
+    }
+
+    .promise-section::before {
+      content: "";
+      position: absolute;
+      inset: auto -120px -140px auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: rgba(254, 206, 8, 0.12);
+    }
+
+    .promise-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .promise-heading {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 36px;
+    }
+
+    .promise-heading h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .promise-heading p {
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.7;
+    }
+
+    .promise-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .promise-icon {
+      margin-bottom: 14px;
+    }
+    .promise-icon > img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      margin: 0 auto;
+      border-radius: 50% !important;
+      border: 3px solid var(--poster-yellow);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .promise-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .promise-card p {
+      color: rgba(255, 255, 255, 0.84);
+      line-height: 1.6;
+    }
+
+    footer {
+      background: var(--poster-red);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 1024px) {
+      .page-header-shell,
+      .services-overview {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header-panel {
+        justify-self: stretch;
+        width: 100%;
+      }
+
+      .page-header-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 10px 0;
+      }
+
+      header .container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 1rem;
+      }
+
+      .logo-text {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+     
+
+      .page-header-shell,
+      .services-overview {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header {
+        padding: 135px 0 50px !important;
+      }
+
+      .page-header-stats {
+        display: none;
+      }
+
+      .page-header-panel {
+        display: none;
+      }
+
+      /* Mobile alignment & reduced box height for Core Services */
+      .services-grid-header {
+        margin-top: 30px !important;
+        padding: 0 10px !important;
+      }
+      .service-heading-title {
+        font-size: 1.55rem !important;
+        line-height: 1.28 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        margin-bottom: 10px !important;
+        color: var(--poster-red) !important;
+      }
+      .heading-divider {
+        width: 60px !important;
+        height: 4px !important;
+        margin: 0 auto 14px !important;
+      }
+      .service-intro-text {
+        font-size: 0.88rem !important;
+        line-height: 1.55 !important;
+        padding: 0 6px !important;
+        margin-bottom: 18px !important;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        margin-bottom: 36px !important;
+      }
+      .service-card {
+        padding: 16px 14px !important;
+        border-radius: 16px !important;
+        border-top-width: 4px !important;
+      }
+      .service-icon {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.4rem !important;
+        border-radius: 12px !important;
+        margin-bottom: 10px !important;
+      }
+      .service-icon svg {
+        width: 44px !important;
+        height: 44px !important;
+      }
+      .service-grid .service-card .service-tag {
+        min-height: 24px !important;
+        padding: 0 10px !important;
+        font-size: 0.68rem !important;
+        margin-bottom: 8px !important;
+      }
+      .service-grid .service-card .service-title {
+        font-size: 1.12rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 8px !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+      .service-grid .service-card .service-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.48 !important;
+        margin-bottom: 10px !important;
+      }
+      .service-features {
+        font-size: 0.78rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 4px !important;
+        padding-left: 18px !important;
+      }
+      .service-features li {
+        margin-bottom: 4px !important;
+      }
+
+      .services-overview {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-bottom: 30px !important;
+      }
+      .overview-card,
+      .overview-highlight {
+        padding: 18px 14px !important;
+        border-radius: 16px !important;
+      }
+      .overview-card h2,
+      .overview-highlight h3 {
+        font-size: 1.25rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 10px !important;
+      }
+      .overview-card p,
+      .overview-highlight p {
+        font-size: 0.86rem !important;
+        line-height: 1.55 !important;
+      }
+      .overview-list {
+        font-size: 0.80rem !important;
+        padding-left: 18px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container,
+      .content-wrapper,
+      .page-header-shell,
+      .promise-shell {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .page-header {
+        padding: 110px 0 58px;
+      }
+
+      .page-header h1,
+      .page-header-panel h2,
+      .overview-card h2,
+      .section-heading h2,
+      .promise-heading h2 {
+        font-size: 1.5rem;
+      }
+
+      .page-header-kicker,
+      .page-header-panel-label,
+      .service-tag {
+        font-size: 0.68rem;
+      }
+    }
+    /* ===============================
+   VALUES + PROMISE GRID FIX
+================================= */
+
+.values-grid,
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ===============================
+   CARD FIXES
+================================= */
+
+.value-card,
+.promise-card {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===============================
+   TEXT WRAPPING FIX
+================================= */
+
+.value-card h3,
+.promise-card h3,
+.value-card p,
+.promise-card p {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Better paragraph readability */
+
+.value-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+.promise-card h3 {
+  color: #ffffff !important;
+}
+
+.promise-card p {
+  color: rgba(255, 255, 255, 0.92) !important;
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
+
+/* ===============================
+   TABLET FIX
+================================= */
+
+@media (max-width: 1024px) {
+
+  .values-grid,
+  .promise-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+}
+
+/* ===============================
+   MOBILE FIX
+================================= */
+
+@media (max-width: 768px) {
+
+  .values-grid,
+  .promise-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .value-card,
+  .promise-card {
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
+    min-width: 0 !important;
+  }
+
+  .value-icon,
+  .promise-icon {
+    margin-bottom: 10px !important;
+  }
+
+  .value-icon img {
+    width: 44px !important;
+    height: 44px !important;
+    object-fit: contain !important;
+  }
+
+  .promise-icon > img,
+  .promise-icon img {
+    width: 44px !important;
+    height: 44px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
+
+  .value-card h3,
+  .promise-card h3 {
+    font-size: 0.98rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .value-card p,
+  .promise-card p {
+    font-size: 0.80rem !important;
+    line-height: 1.45 !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+}
+
+/* ===============================
+   SMALL MOBILE FIX
+================================= */
+
+@media (max-width: 480px) {
+
+  .values-grid,
+  .promise-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .value-card,
+  .promise-card {
+    padding: 14px 10px !important;
+    border-radius: 14px !important;
+  }
+
+  .value-icon img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .promise-icon > img,
+  .promise-icon img {
+    width: 38px !important;
+    height: 38px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
+
+  .value-card h3,
+  .promise-card h3 {
+    font-size: 0.92rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .value-card p,
+  .promise-card p {
+    font-size: 0.76rem !important;
+    line-height: 1.4 !important;
+  }
+
+}
+  
+    /* Golden white background only for services-section */
+    .services-section {
+      background: #fffdf2 !important; /* Golden white */
+      color: var(--black) !important;
+    }
+    
+    .services-section h2,
+    .services-section p,
+    .services-section li {
+      color: var(--black) !important;
+    }
+
+    .services-section .overview-card {
+      background: #ffffff !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
+      color: var(--black) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+    }
+
+
+    /* User request: add space above the boxes */
+    .services-overview {
+      margin-top: 50px !important;
+    }
+
+    /* User request: center align text in the red box */
+    .overview-highlight {
+      text-align: center !important;
+    }
+    
+    .overview-highlight > * {
+      text-align: center !important;
+    }
+    
+    /* Ensure the stats inside the red box are also centered if needed, 
+       but they are in a grid (.overview-metrics). We'll center their text too */
+    .overview-metric {
+      text-align: center !important;
+    }
+
+
+    /* User request: change white box to golden */
+    .services-section .overview-card {
+      background: var(--poster-yellow) !important;
+      border-color: #d4a700 !important;
+      color: var(--poster-red) !important;
+    }
+    
+    .services-section .overview-card h2,
+    .services-section .overview-card p,
+    .services-section .overview-card li {
+      color: var(--poster-dark-red) !important;
+    }
+    
+    .services-section .overview-card li::before {
+      background: var(--poster-red) !important;
+      box-shadow: none !important;
+    }
+
+    /* User request: text in red box should be white and golden */
+    .overview-highlight {
+      color: #ffffff !important;
+    }
+    
+    .overview-highlight h3 {
+      color: #ffffff !important;
+    }
+
+    .overview-highlight > span {
+      color: var(--poster-yellow) !important;
+    }
+
+    .overview-highlight p {
+      color: #ffffff !important;
+      opacity: 0.95;
+    }
+
+    .overview-metric strong {
+      color: var(--poster-yellow) !important;
+    }
+
+    .overview-metric span {
+      color: #ffffff !important;
+      opacity: 0.9;
+    }
+
+
+    /* User request: center boxes with gap top and bottom */
+    .services-section {
+      padding-top: 100px !important;
+      padding-bottom: 100px !important;
+    }
+
+    .services-overview {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      align-items: center; /* If it's a grid, this can help center them vertically relative to each other */
+    }
+
+
+    /* User request: make the 2 boxes the same height */
+    .services-overview {
+      align-items: stretch !important; /* Forces grid items to have the same height */
+    }
+
+    .services-overview > .overview-card,
+    .services-overview > .overview-highlight {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important; /* Centers content vertically within the stretched box */
+      height: 100% !important;
+    }
+
+
+    /* Unique DARK colors for each service card */
+    .service-grid .service-card:nth-child(1) {
+      background: #5a0a0a !important; /* Dark Red */
+      border-top-color: #ff4d4d !important;
+    }
+    .service-grid .service-card:nth-child(2) {
+      background: #001a33 !important; /* Dark Blue */
+      border-top-color: #4da6ff !important;
+    }
+    .service-grid .service-card:nth-child(3) {
+      background: #003311 !important; /* Dark Green */
+      border-top-color: #4dff88 !important;
+    }
+    .service-grid .service-card:nth-child(4) {
+      background: #4d3a00 !important; /* Dark Gold */
+      border-top-color: #ffd24d !important;
+    }
+    .service-grid .service-card:nth-child(5) {
+      background: #2d004d !important; /* Dark Purple */
+      border-top-color: #b34dff !important;
+    }
+    .service-grid .service-card:nth-child(6) {
+      background: #4d1f00 !important; /* Dark Rust/Orange */
+      border-top-color: #ff8c4d !important;
+    }
+
+    /* Make all text inside the dark cards readable */
+    .service-grid .service-card {
+      color: #ffffff !important;
+      transition: all 0.3s ease !important;
+    }
+    .service-grid .service-card h2,
+    .service-grid .service-card h3,
+    .service-grid .service-card p,
+    .service-grid .service-card li,
+    .service-grid .service-card .service-title,
+    .service-grid .service-card .service-desc {
+      color: #ffffff !important;
+    }
+
+    /* Make the specific tags or highlights stand out */
+    .service-grid .service-card .service-tag {
+      background: rgba(255, 255, 255, 0.15) !important;
+      color: var(--poster-yellow) !important;
+    }
+    
+    .service-grid .service-card a,
+    .service-grid .service-card .Learn-More,
+    .service-grid .service-card .Learn-More {
+       color: var(--poster-yellow) !important;
+    }
+
+    .service-grid .service-card:hover {
+      filter: brightness(1.1);
+    }
+
+
+    /* Logo tilt animation sequential */
+    .service-icon {
+      transform-origin: center;
+      animation: tiltLogo 3.6s infinite ease-in-out;
+      display: inline-block !important; /* ensures transform works properly */
+    }
+    
+    .service-grid .service-card:nth-child(1) .service-icon { animation-delay: 0s; }
+    .service-grid .service-card:nth-child(2) .service-icon { animation-delay: 0.6s; }
+    .service-grid .service-card:nth-child(3) .service-icon { animation-delay: 1.2s; }
+    .service-grid .service-card:nth-child(4) .service-icon { animation-delay: 1.8s; }
+    .service-grid .service-card:nth-child(5) .service-icon { animation-delay: 2.4s; }
+    .service-grid .service-card:nth-child(6) .service-icon { animation-delay: 3.0s; }
+
+    @keyframes tiltLogo {
+      0%, 80%, 100% { transform: rotate(0deg); }
+      85% { transform: rotate(-8deg); }
+      90% { transform: rotate(8deg); }
+      95% { transform: rotate(-8deg); }
+    }
+
+</style>
+</head>
+<body>
+  <!-- ======== HEADER ======== -->
+  <header id="main-header">
+    <div class="header-inner">
+      <a href="/" class="logo-link">
+        <div class="logo-group">
+          <img src="/tvkflag.png" alt="TVK Flag" class="logo-flag-img" width="36" height="24" style="width:36px;height:24px;aspect-ratio:3/2;object-fit:contain;" decoding="async" fetchpriority="high">
+          <div class="logo-text-group">
+            <span class="logo-title">TVK THIRUPARANKUNDRAM</span>
+            <span class="logo-sub">தமிழக வெற்றி கழகம்</span>
+          </div>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/developments.html" class="nav-link">Developments</a>
+        <a href="/services.html" class="nav-link active">Services</a>
+        <a href="/ideology.html" class="nav-link">Ideology</a>
+        <a href="/admin.html" class="nav-link nav-admin">Admin</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="/" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="/developments.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        Developments
+      </a>
+      <a href="/services.html" class="mob-link active">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Services
+      </a>
+      <a href="/ideology.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>
+        Ideology
+      </a>
+      <a href="/admin.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Admin
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="page-header-shell">
+        <div class="page-header-copy">
+          <span class="page-header-kicker">மக்கள் சேவை | Citizen Service Hub</span>
+          <h1>
+            Services
+            <span class="page-header-emphasis tamil-text">மக்களை சென்றடையும் Support</span>
+          </h1>
+          <p>
+            குறைதீர் மனுக்கள் முதல் education support, healthcare access, livelihood assistance, மற்றும் community
+            welfare வரை, மக்கள் நேரடியாக புரிந்து கொள்ளக்கூடிய service areas அனைத்தும் இங்கே ஒரே இடத்தில்
+            ஒழுங்காக தொகுக்கப்பட்டுள்ளன.
+          </p>
+          <p class="page-header-mobile-note tamil-text">வேகமான அணுகல், தெளிவான வழிகாட்டு தகவல், accountable follow-up தேவைப்படும் மக்களுக்காக.</p>
+          <div class="page-header-stats">
+            <div class="page-stat">
+              <strong>6</strong>
+              <span>Core service areas</span>
+            </div>
+            <div class="page-stat">
+              <strong>People</strong>
+              <span>Focused delivery and access</span>
+            </div>
+            <div class="page-stat">
+              <strong>Clear</strong>
+              <span>Support categories and outcomes</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="page-header-panel">
+          <span class="page-header-panel-label">மக்களுக்காக | Designed For</span>
+          <h2 class="tamil-text">வேகமான அணுகல், தெளிவான வழிகாட்டு தகவல், accountable follow-up தேவைப்படும் மக்களுக்காக.</h2>
+          <p>
+            கீழே உள்ள service categories ஒவ்வொன்றும், எந்த வகை ஆதரவு எங்கு கிடைக்கிறது மற்றும் அது public
+            welfare-க்கு எப்படி உதவுகிறது என்பதைக் தெளிவாக புரியவைக்க குழுவாக்கப்பட்டுள்ளன.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Services Overview & Grid Section -->
+    <section class="services-section">
+      <div class="content-wrapper">
+        
+        <!-- Services Overview Grid -->
+        <div class="services-overview">
+          <div class="overview-card">
+            <h2 class="tamil-text">மக்களுக்கான சேவைகள் | Outreach System</h2>
+            <p>
+              Under the leadership of MLA & Minister C.T.R. Nirmal Kumar, the Thiruparankundram constituency has established a robust, citizen-first service delivery network. We ensure that welfare assistance, infrastructure requests, and educational aid reach the grassroots level without any administrative delays.
+            </p>
+            <ul class="overview-list tamil-text">
+              <li>நேரடி மனுக்கள் கண்காணிப்பு மற்றும் உடனடி தீர்வு (Grievance Follow-up)</li>
+              <li>பள்ளி மற்றும் கல்லூரி மாணவர்களுக்கான கல்வி உதவி (Student Scholarships)</li>
+              <li>ஏழை எளிய மக்களுக்கு மருத்துவ மற்றும் வாழ்வாதார உதவி (Welfare Outreach)</li>
+            </ul>
+          </div>
+          
+          <div class="overview-highlight">
+            <span>Constituency Impact</span>
+            <h3 class="tamil-text">மக்களுக்கான அர்ப்பணிப்பு</h3>
+            <p>
+              Our centralized service hub monitors and resolves citizen issues across all wards in Thiruparankundram, promoting transparency, accountability, and direct access to representatives.
+            </p>
+            <div class="overview-metrics">
+              <div class="overview-metric">
+                <strong>12,400+</strong>
+                <span>Beneficiaries</span>
+              </div>
+              <div class="overview-metric">
+                <strong>98%</strong>
+                <span>Resolution Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Grid Header -->
+        <div class="section-heading services-grid-header">
+          <span class="service-tag">Outreach Categories</span>
+          <h2 class="service-heading-title tamil-text">சேவைப்பிரிவுகள் | Core Services</h2>
+          <div class="heading-divider"></div>
+          <p class="service-intro-text">
+            Explore the core citizen service directories managed by the Thiruparankundram TVK office. Click on any category to learn more or submit a request.
+          </p>
+        </div>
+
+        <!-- Service Cards Grid -->
+        <div class="service-grid">
+
+          <!-- Card 1: Grievance Redressal -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#c6151b"/>
+                    <stop offset="100%" stop-color="#8b0000"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr1)"/>
+                <!-- clipboard body -->
+                <rect x="14" y="16" width="28" height="32" rx="3" fill="rgba(255,255,255,0.18)"/>
+                <rect x="14" y="16" width="28" height="32" rx="3" fill="none" stroke="#fff" stroke-width="1.5"/>
+                <!-- clip at top -->
+                <rect x="21" y="13" width="14" height="7" rx="2" fill="#fece08"/>
+                <!-- lines -->
+                <rect x="19" y="26" width="7" height="2" rx="1" fill="white"/>
+                <rect x="28" y="26" width="9" height="2" rx="1" fill="rgba(255,255,255,0.6)"/>
+                <rect x="19" y="31" width="7" height="2" rx="1" fill="white"/>
+                <rect x="28" y="31" width="9" height="2" rx="1" fill="rgba(255,255,255,0.6)"/>
+                <rect x="19" y="36" width="7" height="2" rx="1" fill="white"/>
+                <rect x="28" y="36" width="5" height="2" rx="1" fill="rgba(255,255,255,0.6)"/>
+                <!-- checkmark -->
+                <circle cx="40" cy="40" r="7" fill="#fece08"/>
+                <polyline points="36.5,40 39,42.5 43.5,37.5" fill="none" stroke="#8b0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="service-tag">Core Support</span>
+            <h3 class="service-title tamil-text">குறைதீர்க்கும் பிரிவு | Grievance Redressal</h3>
+            <p class="service-desc">
+              Submit and track civic complaints, ward issues, and administrative requests directly online or through our constituency office.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>உடனடி மனு பதிவு & SMS கண்காணிப்பு (Track via SMS)</li>
+              <li>வார்டு வாரியான கள ஆய்வுகள் (Ward-level field visits)</li>
+              <li>நேரடித் தீர்வு முகாம்கள் (Resolution camps)</li>
+            </ul>
+            
+          </div>
+
+          <!-- Card 2: Education Support -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1565C0"/>
+                    <stop offset="100%" stop-color="#0D47A1"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr2)"/>
+                <!-- book body -->
+                <rect x="13" y="15" width="18" height="24" rx="2" fill="rgba(255,255,255,0.2)"/>
+                <rect x="13" y="15" width="18" height="24" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+                <line x1="22" y1="15" x2="22" y2="39" stroke="#fece08" stroke-width="2"/>
+                <rect x="15" y="19" width="5" height="1.5" rx="1" fill="rgba(255,255,255,0.7)"/>
+                <rect x="15" y="23" width="5" height="1.5" rx="1" fill="rgba(255,255,255,0.7)"/>
+                <rect x="15" y="27" width="5" height="1.5" rx="1" fill="rgba(255,255,255,0.7)"/>
+                <!-- graduation cap -->
+                <polygon points="36,22 44,26 36,30 28,26" fill="#fece08"/>
+                <rect x="42" y="26" width="2" height="7" rx="1" fill="white"/>
+                <ellipse cx="43" cy="33" rx="2.5" ry="1.5" fill="#fece08"/>
+                <path d="M31 27.5 L31 33 Q36 36 41 33 L41 27.5" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1"/>
+              </svg>
+            </div>
+            <span class="service-tag">Education</span>
+            <h3 class="service-title tamil-text">கல்வி உதவி | Student Support</h3>
+            <p class="service-desc">
+              Scholarships, learning material distribution, and career guidance seminars for school and college students in Thiruparankundram.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>உயர்கல்வி நிதியுதவி திட்டங்கள் (College Scholarships)</li>
+              <li>இலவச புத்தக வங்கி & பயிலகங்கள் (Free Book Bank)</li>
+              <li>தொழில்முறை வழிகாட்டுதல் வகுப்புகள் (Career Guidance)</li>
+            </ul>
+            
+          </div>
+
+          <!-- Card 3: Healthcare Access -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#d32f2f"/>
+                    <stop offset="100%" stop-color="#b71c1c"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr3)"/>
+                <!-- medical cross -->
+                <rect x="23" y="14" width="10" height="28" rx="3" fill="white"/>
+                <rect x="14" y="23" width="28" height="10" rx="3" fill="white"/>
+                <!-- heart accent -->
+                <path d="M28,44 C28,44 18,36 18,30 a5 5 0 0 1 10,0 a5 5 0 0 1 10,0 C38,36 28,44 28,44z" fill="#fece08" opacity="0.9"/>
+              </svg>
+            </div>
+            <span class="service-tag">Welfare</span>
+            <h3 class="service-title tamil-text">மருத்துவ உதவி | Healthcare Access</h3>
+            <p class="service-desc">
+              Free general medical camps, diagnostic drives, and emergency medical assistance for families in rural wards.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>இலவச மருத்துவ & பல் முகாம்கள் (Health & Dental Camps)</li>
+              <li>அரசு மருத்துவ காப்பீடு வழிகாட்டி (Insurance Guidance)</li>
+              <li>மருந்துகள் மற்றும் அவசர உதவி (Emergency medical aid)</li>
+            </ul>
+            
+          </div>
+
+          <!-- Card 4: Infrastructure & Basic Needs -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e65100"/>
+                    <stop offset="100%" stop-color="#bf360c"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr4)"/>
+                <!-- road -->
+                <rect x="10" y="38" width="36" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+                <rect x="25" y="40" width="6" height="2" rx="1" fill="white" opacity="0.7"/>
+                <!-- building 1 -->
+                <rect x="12" y="20" width="14" height="20" rx="2" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.5"/>
+                <rect x="15" y="23" width="3" height="4" rx="1" fill="white"/>
+                <rect x="20" y="23" width="3" height="4" rx="1" fill="white"/>
+                <rect x="15" y="30" width="3" height="4" rx="1" fill="white"/>
+                <rect x="20" y="30" width="3" height="4" rx="1" fill="white"/>
+                <!-- building 2 -->
+                <rect x="30" y="14" width="14" height="26" rx="2" fill="rgba(255,255,255,0.15)" stroke="#fece08" stroke-width="1.5"/>
+                <rect x="33" y="18" width="3" height="4" rx="1" fill="#fece08" opacity="0.8"/>
+                <rect x="38" y="18" width="3" height="4" rx="1" fill="#fece08" opacity="0.8"/>
+                <rect x="33" y="25" width="3" height="4" rx="1" fill="#fece08" opacity="0.8"/>
+                <rect x="38" y="25" width="3" height="4" rx="1" fill="#fece08" opacity="0.8"/>
+                <!-- crane arm -->
+                <line x1="37" y1="14" x2="37" y2="8" stroke="white" stroke-width="2"/>
+                <line x1="32" y1="8" x2="44" y2="8" stroke="white" stroke-width="2"/>
+                <line x1="44" y1="8" x2="44" y2="13" stroke="white" stroke-width="1.5" stroke-dasharray="2,1"/>
+              </svg>
+            </div>
+            <span class="service-tag">Development</span>
+            <h3 class="service-title tamil-text">அடிப்படை வசதிகள் | Infrastructure</h3>
+            <p class="service-desc">
+              Raising and tracking basic community concerns such as drinking water supply, road repairs, streetlights, and sanitation.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>குடிநீர் பற்றாக்குறை நிவர்த்தி (Drinking Water supply)</li>
+              <li>சாலை மற்றும் தெருவிளக்கு பழுது (Streetlight reporting)</li>
+              <li>முறையான வடிகால் பராமரிப்பு (Drainage maintenance)</li>
+            </ul>
+            
+          </div>
+
+          <!-- Card 5: Livelihood & Skill Training -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr5" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6a1b9a"/>
+                    <stop offset="100%" stop-color="#4527a0"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr5)"/>
+                <!-- briefcase -->
+                <rect x="11" y="22" width="34" height="22" rx="3" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.5"/>
+                <path d="M21 22 V18 a4 4 0 0 1 4-4 h6 a4 4 0 0 1 4 4 V22" fill="none" stroke="white" stroke-width="1.5"/>
+                <line x1="11" y1="31" x2="45" y2="31" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+                <rect x="25" y="29" width="6" height="4" rx="1" fill="#fece08"/>
+                <!-- gear accent -->
+                <circle cx="40" cy="15" r="6" fill="#fece08"/>
+                <circle cx="40" cy="15" r="2.5" fill="#4527a0"/>
+                <rect x="39" y="8" width="2" height="3" rx="1" fill="#fece08"/>
+                <rect x="39" y="19" width="2" height="3" rx="1" fill="#fece08"/>
+                <rect x="33" y="14" width="3" height="2" rx="1" fill="#fece08"/>
+                <rect x="44" y="14" width="3" height="2" rx="1" fill="#fece08"/>
+              </svg>
+            </div>
+            <span class="service-tag">Empowerment</span>
+            <h3 class="service-title tamil-text">வாழ்வாதாரம் & திறன் | Skill Development</h3>
+            <p class="service-desc">
+              Vocational training, coding workshops, and employment drives designed to empower local youth and women.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>இலவச கணினி மற்றும் திறன் பயிற்சி (Free IT Training)</li>
+              <li>வேலைவாய்ப்பு முகாம்கள் (Constituency Job Fairs)</li>
+              <li>சுயதொழில் ஆலோசனைகள் (Self-employment guidance)</li>
+            </ul>
+            
+          </div>
+
+          <!-- Card 6: Women & Social Welfare -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr6" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00695c"/>
+                    <stop offset="100%" stop-color="#004d40"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr6)"/>
+                <!-- person 1 (center) -->
+                <circle cx="28" cy="17" r="5.5" fill="white"/>
+                <path d="M18 38 Q18 28 28 28 Q38 28 38 38" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.5"/>
+                <!-- person 2 (left) -->
+                <circle cx="14" cy="20" r="4" fill="rgba(255,255,255,0.7)"/>
+                <path d="M6 38 Q6 30 14 30 Q22 30 22 38" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+                <!-- person 3 (right) -->
+                <circle cx="42" cy="20" r="4" fill="rgba(255,255,255,0.7)"/>
+                <path d="M34 38 Q34 30 42 30 Q50 30 50 38" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+                <!-- heart -->
+                <path d="M28,46 C28,46 22,41 22,37 a3 3 0 0 1 6,0 a3 3 0 0 1 6,0 C34,41 28,46 28,46z" fill="#fece08"/>
+              </svg>
+            </div>
+            <span class="service-tag">Welfare</span>
+            <h3 class="service-title tamil-text">மகளிர் & சமூக நலம் | Social Welfare</h3>
+            <p class="service-desc">
+              Assisting single mothers, senior citizens, and women's self-help groups with direct welfare and pension coordination.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>மகளிர் சுய உதவிக்குழு ஆதரவு (Self-Help Group support)</li>
+              <li>முதியோர் ஓய்வூதிய விண்ணப்பங்கள் (Old age pension help)</li>
+              <li>நலத்திட்ட பொருட்கள் விநியோகம் (Welfare distribution)</li>
+            </ul>
+            
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="values" class="thematic-section values-section">
+      <div class="content-wrapper">
+        <div class="section-heading">
+          <h2 class="tamil-text">நமது நான்கு தூண்கள் | Our Four Pillars</h2>
+          <p>
+            These pillars shape how citizen services should be designed: equal access, practical innovation,
+            transparent follow-up, and strong public protection.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <img src="/pillar_equality.png" alt="Equality / சமத்துவம்" class="real-icon-img">
+            </div>
+            <h3 class="tamil-text">சமத்துவம் (Equality)</h3>
+            <p>Ensuring equal opportunities and progress for all citizens regardless of their backgrounds. A society where justice is universal.</p>
+          </div>
+          <div class="value-card alt">
+            <div class="value-icon">
+              <img src="/pillar_innovation.png" alt="Innovation / அறிவியல் பார்வை" class="real-icon-img">
+            </div>
+            <h3 class="tamil-text">அறிவியல் பார்வை (Innovation)</h3>
+            <p>Leveraging scientific temper and technological advancements to solve age-old administrative challenges effectively.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <img src="/pillar_transparency.png" alt="Transparency / வெளிப்படைத் தன்மை" class="real-icon-img">
+            </div>
+            <h3 class="tamil-text">வெளிப்படைத் தன்மை (Transparency)</h3>
+            <p>A corruption-free digital governance where every decision is open to public scrutiny and tracked in real-time.</p>
+          </div>
+          <div class="value-card alt">
+            <div class="value-icon">
+              <img src="/pillar_security.png" alt="Security / பாதுகாப்பு" class="real-icon-img">
+            </div>
+            <h3 class="tamil-text">பாதுகாப்பு (Security)</h3>
+            <p>Protecting the rights, data, and future of our people through robust security frameworks and social safety nets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="promise" class="promise-section">
+      <div class="promise-shell">
+        <div class="promise-heading">
+          <h2 class="tamil-text">எங்களின் வாக்குறுதி | Our Promise</h2>
+          <p>
+            Good service is not only about availability. It is about timeliness, reliability, transparency, and public
+            trust built through consistent follow-through.
+          </p>
+        </div>
+
+        <div class="promise-grid">
+          <div class="promise-card">
+            <div class="promise-icon">
+              <img src="/promise_timely.png" alt="Timely Updates / சரியான நேரப் புதுப்பிப்புகள்" class="real-icon-img">
+            </div>
+            <h3 class="tamil-text">சரியான நேரப் புதுப்பிப்புகள்</h3>
+            <p>Timely updates that reduce uncertainty and keep people informed.</p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">
+              <img src="/promise_accurate.png" alt="Accurate Information / துல்லியமான தகவல்" class="real-icon-img">
+            </div>
+            <h3 class="tamil-text">துல்லியமான தகவல்</h3>
+            <p>Accurate information presented clearly and responsibly.</p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">
+              <img src="/promise_transparency.png" alt="Full Transparency / முழு வெளிப்படைத் தன்மை" class="real-icon-img">
+            </div>
+            <h3 class="tamil-text">முழு வெளிப்படைத் தன்மை</h3>
+            <p>Full transparency in service intent, communication, and progress.</p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">
+              <img src="/promise_trust.png" alt="People's Trust / மக்கள் நம்பிக்கை" class="real-icon-img">
+            </div>
+            <h3 class="tamil-text">மக்கள் நம்பிக்கை</h3>
+            <p>People's trust as the standard every public-facing service must earn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tamilaga Vettri Kazhagam. All rights reserved.</p>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+
+  <script src="/animated-bg.js" defer></script>
+</body>
+</html>
