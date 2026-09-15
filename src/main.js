@@ -1,4 +1,5 @@
 import './style.css'
+import './translator.js'
 import { createIcons, Cpu, Layout, Smartphone, Users2, ClipboardList, MessageSquareMore, ShieldCheck, Clock, Target, Eye, Users, PhoneCall, Globe, MapPin, MessageSquarePlus, CheckCircle2, HandMetal, BrainCircuit, Shield, Quote, ArrowRight, Mic, ImagePlus, Search, Trophy, Award, Star, Landmark, Activity, Vote } from 'lucide'
 
 // Initialize Lucide Icons
@@ -39,7 +40,7 @@ createIcons({
 
 // Set Hero Image (already set in HTML, this is a fallback)
 const heroImg = document.getElementById('hero-image')
-if (heroImg) heroImg.src = '/vijaysir.png'
+if (heroImg) heroImg.src = '/vijay_flag_hero.jpg'
 
 // Header Scroll Effect
 const header = document.querySelector('#main-header') || document.querySelector('header')
@@ -970,7 +971,7 @@ function prefetchPage(url) {
 async function navigateInstant(url) {
   const targetUrl = new URL(url, window.location.origin);
   const path = targetUrl.pathname;
-  if (path.includes('admin')) {
+  if (path.includes('admin') || path === '/' || path === '/index.html') {
     window.location.href = url;
     return;
   }
@@ -1069,7 +1070,7 @@ document.addEventListener('mouseover', (e) => {
   const link = e.target.closest('a[href]');
   if (!link) return;
   const href = link.getAttribute('href');
-  if (href && href.startsWith('/') && !href.startsWith('//') && !href.includes('#') && !href.includes('admin')) {
+  if (href && href.startsWith('/') && !href.startsWith('//') && !href.includes('#') && !href.includes('admin') && href !== '/' && href !== '/index.html') {
     prefetchPage(href);
   }
 }, { passive: true });
@@ -1078,7 +1079,7 @@ document.addEventListener('touchstart', (e) => {
   const link = e.target.closest('a[href]');
   if (!link) return;
   const href = link.getAttribute('href');
-  if (href && href.startsWith('/') && !href.startsWith('//') && !href.includes('#') && !href.includes('admin')) {
+  if (href && href.startsWith('/') && !href.startsWith('//') && !href.includes('#') && !href.includes('admin') && href !== '/' && href !== '/index.html') {
     prefetchPage(href);
   }
 }, { passive: true });
@@ -1088,7 +1089,9 @@ document.addEventListener('click', (e) => {
   if (!link) return;
   const href = link.getAttribute('href');
   if (href && href.startsWith('/') && !href.startsWith('//') && !href.includes('#') && !link.hasAttribute('download') && link.target !== '_blank') {
-    if (href.includes('admin')) return; // Allow default full page load for admin
+    if (href.includes('admin') || href === '/' || href === '/index.html' || href === 'index.html') {
+      return; // Allow standard full page load when navigating to Home or Admin
+    }
     e.preventDefault();
     navigateInstant(href);
   }

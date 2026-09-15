@@ -1,5 +1,6 @@
 import './style.css';
 import './admin.css';
+import './translator.js';
 import { 
   createIcons, 
   ShieldCheck, 

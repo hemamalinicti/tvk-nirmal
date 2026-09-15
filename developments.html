@@ -1234,13 +1234,15 @@
   <!-- ======== HEADER ======== -->
   <header id="main-header">
     <div class="header-inner">
-      <div class="logo-group">
-        <img src="/tvkflag.png" alt="TVK Flag" class="logo-flag-img" width="36" height="24" style="width:36px;height:24px;aspect-ratio:3/2;object-fit:contain;" decoding="async" fetchpriority="high">
-        <div class="logo-text-group">
-          <span class="logo-title">TVK THIRUPARANKUNDRAM</span>
-          <span class="logo-sub">தமிழக வெற்றி கழகம்</span>
+      <a href="/" class="logo-link">
+        <div class="logo-group">
+          <img src="/tvkflag.png" alt="TVK Flag" class="logo-flag-img" width="36" height="24" style="width:36px;height:24px;aspect-ratio:3/2;object-fit:contain;" decoding="async" fetchpriority="high">
+          <div class="logo-text-group">
+            <span class="logo-title">TVK THIRUPARANKUNDRAM</span>
+            <span class="logo-sub">தமிழக வெற்றி கழகம்</span>
+          </div>
         </div>
-      </div>
+      </a>
       <nav class="main-nav">
         <a href="/" class="nav-link">Home</a>
         <a href="/developments.html" class="nav-link active">Developments</a>
@@ -1805,7 +1807,7 @@
 
       function initDevelopmentsPage() {
         renderInstagramDevelopmentCards();
-        loadInstagramMedia();
+        if (typeof loadInstagramMedia === 'function') loadInstagramMedia();
         rebuildDots();
 
         const instagramContainer = document.getElementById('instagram-development-grid');
