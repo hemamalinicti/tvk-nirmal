@@ -1087,15 +1087,44 @@ document.addEventListener('touchstart', (e) => {
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a[href]');
   if (!link) return;
+
+  // Auto-close mobile menu on any link click
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (hamburger && mobileNav && (link.classList.contains('mob-link') || link.closest('#mobile-nav'))) {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
   const href = link.getAttribute('href');
-  if (href && href.startsWith('/') && !href.startsWith('//') && !href.includes('#') && !link.hasAttribute('download') && link.target !== '_blank') {
-    if (href.includes('admin') || href === '/' || href === '/index.html' || href === 'index.html') {
-      return; // Allow standard full page load when navigating to Home or Admin
+  if (!href) return;
+
+  // Home navigation logic (Desktop & Mobile)
+  if (href === '/' || href === '/index.html' || href === 'index.html' || href === '#home') {
+    const currentPath = window.location.pathname;
+    if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('index.html')) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    } else {
+      e.preventDefault();
+      window.location.href = '/';
+      return;
+    }
+  }
+
+  // SPA navigation for internal pages
+  if (href.startsWith('/') && !href.startsWith('//') && !href.startsWith('#') && !link.hasAttribute('download') && link.target !== '_blank') {
+    if (href.includes('admin')) {
+      window.location.href = href;
+      return;
     }
     e.preventDefault();
     navigateInstant(href);
   }
 });
+
 
 window.addEventListener('popstate', () => {
   navigateInstant(window.location.pathname);
